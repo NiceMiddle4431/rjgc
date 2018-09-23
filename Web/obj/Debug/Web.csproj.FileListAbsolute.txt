@@ -1,0 +1,258 @@
+D:\VS2015解决方案\软件工程课设\Web\bin\ApplicationInsights.config
+D:\VS2015解决方案\软件工程课设\Web\bin\roslyn\csc.exe
+D:\VS2015解决方案\软件工程课设\Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\VS2015解决方案\软件工程课设\Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\VS2015解决方案\软件工程课设\Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\VS2015解决方案\软件工程课设\Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\VS2015解决方案\软件工程课设\Web\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\VS2015解决方案\软件工程课设\Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\VS2015解决方案\软件工程课设\Web\bin\roslyn\System.Collections.Immutable.dll
+D:\VS2015解决方案\软件工程课设\Web\bin\roslyn\System.Reflection.Metadata.dll
+D:\VS2015解决方案\软件工程课设\Web\bin\roslyn\vbc.exe
+D:\VS2015解决方案\软件工程课设\Web\bin\roslyn\VBCSCompiler.exe
+D:\VS2015解决方案\软件工程课设\Web\bin\roslyn\VBCSCompiler.exe.config
+D:\VS2015解决方案\软件工程课设\Web\bin\Web.dll.config
+D:\VS2015解决方案\软件工程课设\Web\bin\Web.dll
+D:\VS2015解决方案\软件工程课设\Web\bin\Web.pdb
+D:\VS2015解决方案\软件工程课设\Web\bin\Microsoft.AI.DependencyCollector.xml
+D:\VS2015解决方案\软件工程课设\Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\VS2015解决方案\软件工程课设\Web\bin\Microsoft.AI.Web.xml
+D:\VS2015解决方案\软件工程课设\Web\bin\Microsoft.AI.WindowsServer.xml
+D:\VS2015解决方案\软件工程课设\Web\bin\Microsoft.ApplicationInsights.xml
+D:\VS2015解决方案\软件工程课设\Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\VS2015解决方案\软件工程课设\Web\bin\System.Web.Razor.xml
+D:\VS2015解决方案\软件工程课设\Web\bin\System.Web.Webpages.xml
+D:\VS2015解决方案\软件工程课设\Web\bin\System.Web.Webpages.Deployment.xml
+D:\VS2015解决方案\软件工程课设\Web\bin\System.Web.Webpages.Razor.xml
+D:\VS2015解决方案\软件工程课设\Web\bin\System.Web.Helpers.xml
+D:\VS2015解决方案\软件工程课设\Web\bin\System.Web.Mvc.xml
+D:\VS2015解决方案\软件工程课设\Web\bin\zh-Hans\System.Web.Razor.resources.dll
+D:\VS2015解决方案\软件工程课设\Web\bin\zh-Hans\System.Web.Webpages.resources.dll
+D:\VS2015解决方案\软件工程课设\Web\bin\zh-Hans\System.Web.Webpages.Deployment.resources.dll
+D:\VS2015解决方案\软件工程课设\Web\bin\zh-Hans\System.Web.Webpages.Razor.resources.dll
+D:\VS2015解决方案\软件工程课设\Web\bin\zh-Hans\System.Web.Helpers.resources.dll
+D:\VS2015解决方案\软件工程课设\Web\bin\zh-Hans\System.Web.Mvc.resources.dll
+D:\VS2015解决方案\软件工程课设\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
+D:\VS2015解决方案\软件工程课设\Web\obj\Debug\Web.dll
+D:\VS2015解决方案\软件工程课设\Web\obj\Debug\Web.pdb
+D:\VS2015解决方案\软件工程课设\Web\bin\BLL.dll
+D:\VS2015解决方案\软件工程课设\Web\bin\Model.dll
+D:\VS2015解决方案\软件工程课设\Web\bin\DAL.dll
+D:\VS2015解决方案\软件工程课设\Web\bin\BLL.pdb
+D:\VS2015解决方案\软件工程课设\Web\bin\Model.pdb
+D:\VS2015解决方案\软件工程课设\Web\bin\DAL.pdb
+D:\VS2015解决方案\rjgc_keshe\Web\bin\ApplicationInsights.config
+D:\VS2015解决方案\rjgc_keshe\Web\bin\roslyn\csc.exe
+D:\VS2015解决方案\rjgc_keshe\Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\VS2015解决方案\rjgc_keshe\Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\VS2015解决方案\rjgc_keshe\Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\VS2015解决方案\rjgc_keshe\Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\VS2015解决方案\rjgc_keshe\Web\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\VS2015解决方案\rjgc_keshe\Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\VS2015解决方案\rjgc_keshe\Web\bin\roslyn\System.Collections.Immutable.dll
+D:\VS2015解决方案\rjgc_keshe\Web\bin\roslyn\System.Reflection.Metadata.dll
+D:\VS2015解决方案\rjgc_keshe\Web\bin\roslyn\vbc.exe
+D:\VS2015解决方案\rjgc_keshe\Web\bin\roslyn\VBCSCompiler.exe
+D:\VS2015解决方案\rjgc_keshe\Web\bin\roslyn\VBCSCompiler.exe.config
+D:\VS2015解决方案\rjgc_keshe\Web\bin\Web.dll.config
+D:\VS2015解决方案\rjgc_keshe\Web\bin\Web.dll
+D:\VS2015解决方案\rjgc_keshe\Web\bin\Web.pdb
+D:\VS2015解决方案\rjgc_keshe\Web\bin\BLL.dll
+D:\VS2015解决方案\rjgc_keshe\Web\bin\Model.dll
+D:\VS2015解决方案\rjgc_keshe\Web\bin\DAL.dll
+D:\VS2015解决方案\rjgc_keshe\Web\bin\BLL.pdb
+D:\VS2015解决方案\rjgc_keshe\Web\bin\Model.pdb
+D:\VS2015解决方案\rjgc_keshe\Web\bin\Microsoft.AI.DependencyCollector.xml
+D:\VS2015解决方案\rjgc_keshe\Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\VS2015解决方案\rjgc_keshe\Web\bin\Microsoft.AI.Web.xml
+D:\VS2015解决方案\rjgc_keshe\Web\bin\Microsoft.AI.WindowsServer.xml
+D:\VS2015解决方案\rjgc_keshe\Web\bin\Microsoft.ApplicationInsights.xml
+D:\VS2015解决方案\rjgc_keshe\Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\VS2015解决方案\rjgc_keshe\Web\bin\System.Web.Razor.xml
+D:\VS2015解决方案\rjgc_keshe\Web\bin\System.Web.Webpages.xml
+D:\VS2015解决方案\rjgc_keshe\Web\bin\System.Web.Webpages.Deployment.xml
+D:\VS2015解决方案\rjgc_keshe\Web\bin\System.Web.Webpages.Razor.xml
+D:\VS2015解决方案\rjgc_keshe\Web\bin\System.Web.Helpers.xml
+D:\VS2015解决方案\rjgc_keshe\Web\bin\System.Web.Mvc.xml
+D:\VS2015解决方案\rjgc_keshe\Web\bin\DAL.pdb
+D:\VS2015解决方案\rjgc_keshe\Web\bin\zh-Hans\System.Web.Razor.resources.dll
+D:\VS2015解决方案\rjgc_keshe\Web\bin\zh-Hans\System.Web.Webpages.resources.dll
+D:\VS2015解决方案\rjgc_keshe\Web\bin\zh-Hans\System.Web.Webpages.Deployment.resources.dll
+D:\VS2015解决方案\rjgc_keshe\Web\bin\zh-Hans\System.Web.Webpages.Razor.resources.dll
+D:\VS2015解决方案\rjgc_keshe\Web\bin\zh-Hans\System.Web.Helpers.resources.dll
+D:\VS2015解决方案\rjgc_keshe\Web\bin\zh-Hans\System.Web.Mvc.resources.dll
+D:\VS2015解决方案\rjgc_keshe\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
+D:\VS2015解决方案\rjgc_keshe\Web\obj\Debug\Web.dll
+D:\VS2015解决方案\rjgc_keshe\Web\obj\Debug\Web.pdb
+D:\VS2015解决方案\rjgc\Web\bin\ApplicationInsights.config
+D:\VS2015解决方案\rjgc\Web\bin\roslyn\csc.exe
+D:\VS2015解决方案\rjgc\Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\VS2015解决方案\rjgc\Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\VS2015解决方案\rjgc\Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\VS2015解决方案\rjgc\Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\VS2015解决方案\rjgc\Web\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\VS2015解决方案\rjgc\Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\VS2015解决方案\rjgc\Web\bin\roslyn\System.Collections.Immutable.dll
+D:\VS2015解决方案\rjgc\Web\bin\roslyn\System.Reflection.Metadata.dll
+D:\VS2015解决方案\rjgc\Web\bin\roslyn\vbc.exe
+D:\VS2015解决方案\rjgc\Web\bin\roslyn\VBCSCompiler.exe
+D:\VS2015解决方案\rjgc\Web\bin\roslyn\VBCSCompiler.exe.config
+D:\VS2015解决方案\rjgc\Web\bin\Web.dll.config
+D:\VS2015解决方案\rjgc\Web\bin\Web.dll
+D:\VS2015解决方案\rjgc\Web\bin\Web.pdb
+D:\VS2015解决方案\rjgc\Web\bin\BLL.dll
+D:\VS2015解决方案\rjgc\Web\bin\Model.dll
+D:\VS2015解决方案\rjgc\Web\bin\DAL.dll
+D:\VS2015解决方案\rjgc\Web\bin\BLL.pdb
+D:\VS2015解决方案\rjgc\Web\bin\Model.pdb
+D:\VS2015解决方案\rjgc\Web\bin\Microsoft.AI.DependencyCollector.xml
+D:\VS2015解决方案\rjgc\Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\VS2015解决方案\rjgc\Web\bin\Microsoft.AI.Web.xml
+D:\VS2015解决方案\rjgc\Web\bin\Microsoft.AI.WindowsServer.xml
+D:\VS2015解决方案\rjgc\Web\bin\Microsoft.ApplicationInsights.xml
+D:\VS2015解决方案\rjgc\Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\VS2015解决方案\rjgc\Web\bin\System.Web.Razor.xml
+D:\VS2015解决方案\rjgc\Web\bin\System.Web.Webpages.xml
+D:\VS2015解决方案\rjgc\Web\bin\System.Web.Webpages.Deployment.xml
+D:\VS2015解决方案\rjgc\Web\bin\System.Web.Webpages.Razor.xml
+D:\VS2015解决方案\rjgc\Web\bin\System.Web.Helpers.xml
+D:\VS2015解决方案\rjgc\Web\bin\System.Web.Mvc.xml
+D:\VS2015解决方案\rjgc\Web\bin\DAL.pdb
+D:\VS2015解决方案\rjgc\Web\bin\zh-Hans\System.Web.Razor.resources.dll
+D:\VS2015解决方案\rjgc\Web\bin\zh-Hans\System.Web.Webpages.resources.dll
+D:\VS2015解决方案\rjgc\Web\bin\zh-Hans\System.Web.Webpages.Deployment.resources.dll
+D:\VS2015解决方案\rjgc\Web\bin\zh-Hans\System.Web.Webpages.Razor.resources.dll
+D:\VS2015解决方案\rjgc\Web\bin\zh-Hans\System.Web.Helpers.resources.dll
+D:\VS2015解决方案\rjgc\Web\bin\zh-Hans\System.Web.Mvc.resources.dll
+D:\VS2015解决方案\rjgc\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
+D:\VS2015解决方案\rjgc\Web\obj\Debug\Web.dll
+D:\VS2015解决方案\rjgc\Web\obj\Debug\Web.pdb
+E:\大三下\软件课程设计\rjgc-master\Web\bin\ApplicationInsights.config
+E:\大三下\软件课程设计\rjgc-master\Web\bin\roslyn\csc.exe
+E:\大三下\软件课程设计\rjgc-master\Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\大三下\软件课程设计\rjgc-master\Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\大三下\软件课程设计\rjgc-master\Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\大三下\软件课程设计\rjgc-master\Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\大三下\软件课程设计\rjgc-master\Web\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\大三下\软件课程设计\rjgc-master\Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\大三下\软件课程设计\rjgc-master\Web\bin\roslyn\System.Collections.Immutable.dll
+E:\大三下\软件课程设计\rjgc-master\Web\bin\roslyn\System.Reflection.Metadata.dll
+E:\大三下\软件课程设计\rjgc-master\Web\bin\roslyn\vbc.exe
+E:\大三下\软件课程设计\rjgc-master\Web\bin\roslyn\VBCSCompiler.exe
+E:\大三下\软件课程设计\rjgc-master\Web\bin\roslyn\VBCSCompiler.exe.config
+E:\大三下\软件课程设计\rjgc-master\Web\bin\Web.dll.config
+E:\大三下\软件课程设计\rjgc-master\Web\bin\Web.dll
+E:\大三下\软件课程设计\rjgc-master\Web\bin\Web.pdb
+E:\大三下\软件课程设计\rjgc-master\Web\bin\BLL.dll
+E:\大三下\软件课程设计\rjgc-master\Web\bin\Model.dll
+E:\大三下\软件课程设计\rjgc-master\Web\bin\DAL.dll
+E:\大三下\软件课程设计\rjgc-master\Web\bin\BLL.pdb
+E:\大三下\软件课程设计\rjgc-master\Web\bin\Model.pdb
+E:\大三下\软件课程设计\rjgc-master\Web\bin\Microsoft.AI.DependencyCollector.xml
+E:\大三下\软件课程设计\rjgc-master\Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\大三下\软件课程设计\rjgc-master\Web\bin\Microsoft.AI.Web.xml
+E:\大三下\软件课程设计\rjgc-master\Web\bin\Microsoft.AI.WindowsServer.xml
+E:\大三下\软件课程设计\rjgc-master\Web\bin\Microsoft.ApplicationInsights.xml
+E:\大三下\软件课程设计\rjgc-master\Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\大三下\软件课程设计\rjgc-master\Web\bin\System.Web.Razor.xml
+E:\大三下\软件课程设计\rjgc-master\Web\bin\System.Web.Webpages.xml
+E:\大三下\软件课程设计\rjgc-master\Web\bin\System.Web.Webpages.Deployment.xml
+E:\大三下\软件课程设计\rjgc-master\Web\bin\System.Web.Webpages.Razor.xml
+E:\大三下\软件课程设计\rjgc-master\Web\bin\System.Web.Helpers.xml
+E:\大三下\软件课程设计\rjgc-master\Web\bin\System.Web.Mvc.xml
+E:\大三下\软件课程设计\rjgc-master\Web\bin\DAL.pdb
+E:\大三下\软件课程设计\rjgc-master\Web\bin\zh-Hans\System.Web.Razor.resources.dll
+E:\大三下\软件课程设计\rjgc-master\Web\bin\zh-Hans\System.Web.Webpages.resources.dll
+E:\大三下\软件课程设计\rjgc-master\Web\bin\zh-Hans\System.Web.Webpages.Deployment.resources.dll
+E:\大三下\软件课程设计\rjgc-master\Web\bin\zh-Hans\System.Web.Webpages.Razor.resources.dll
+E:\大三下\软件课程设计\rjgc-master\Web\bin\zh-Hans\System.Web.Helpers.resources.dll
+E:\大三下\软件课程设计\rjgc-master\Web\bin\zh-Hans\System.Web.Mvc.resources.dll
+E:\大三下\软件课程设计\rjgc-master\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
+E:\大三下\软件课程设计\rjgc-master\Web\obj\Debug\Web.dll
+E:\大三下\软件课程设计\rjgc-master\Web\obj\Debug\Web.pdb
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\ApplicationInsights.config
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\roslyn\csc.exe
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\roslyn\System.Collections.Immutable.dll
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\roslyn\System.Reflection.Metadata.dll
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\roslyn\vbc.exe
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\roslyn\VBCSCompiler.exe
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\roslyn\VBCSCompiler.exe.config
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\Web.dll.config
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\Web.dll
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\Web.pdb
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\BLL.dll
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\Model.dll
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\DAL.dll
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\BLL.pdb
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\Model.pdb
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\Microsoft.AI.DependencyCollector.xml
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\Microsoft.AI.Web.xml
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\Microsoft.AI.WindowsServer.xml
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\Microsoft.ApplicationInsights.xml
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\System.Web.Razor.xml
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\System.Web.Webpages.xml
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\System.Web.Webpages.Deployment.xml
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\System.Web.Webpages.Razor.xml
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\System.Web.Helpers.xml
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\System.Web.Mvc.xml
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\DAL.pdb
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\zh-Hans\System.Web.Razor.resources.dll
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\zh-Hans\System.Web.Webpages.resources.dll
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\zh-Hans\System.Web.Webpages.Deployment.resources.dll
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\zh-Hans\System.Web.Webpages.Razor.resources.dll
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\zh-Hans\System.Web.Helpers.resources.dll
+D:\VS2015解决方案\最终版\rjgc-master\Web\bin\zh-Hans\System.Web.Mvc.resources.dll
+D:\VS2015解决方案\最终版\rjgc-master\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
+D:\VS2015解决方案\最终版\rjgc-master\Web\obj\Debug\Web.dll
+D:\VS2015解决方案\最终版\rjgc-master\Web\obj\Debug\Web.pdb
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\ApplicationInsights.config
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\roslyn\csc.exe
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\roslyn\vbc.exe
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\roslyn\VBCSCompiler.exe
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\Web.dll.config
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\Web.dll
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\Web.pdb
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\BLL.dll
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\Model.dll
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\DAL.dll
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\BLL.pdb
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\Model.pdb
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\Microsoft.AI.Web.xml
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\System.Web.Razor.xml
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\System.Web.Webpages.xml
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\System.Web.Webpages.Razor.xml
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\System.Web.Helpers.xml
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\System.Web.Mvc.xml
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\DAL.pdb
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\zh-Hans\System.Web.Razor.resources.dll
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\zh-Hans\System.Web.Webpages.resources.dll
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\zh-Hans\System.Web.Webpages.Deployment.resources.dll
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\zh-Hans\System.Web.Webpages.Razor.resources.dll
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\zh-Hans\System.Web.Helpers.resources.dll
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\bin\zh-Hans\System.Web.Mvc.resources.dll
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\obj\Debug\Web.dll
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Web\obj\Debug\Web.pdb

@@ -1,0 +1,214 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int teacherId = ViewBag.TeacherId;
+}
+
+
+<h3><i class="fa fa-angle-right"></i> 问卷结果</h3>
+
+<div class="row mt">
+    <div class="col-lg-12">
+        <div class="content-panel">
+            <section id="unseen" style="margin-left:10px;margin-right:10px;">
+                <table id="ResultList"></table>
+            </section>
+        </div><!-- /content-panel -->
+    </div><!-- /col-lg-4 -->
+</div><!-- /row -->
+
+@section javascript{
+   <link href="~/assets/bootstraptable/src/bootstrap-table.css" rel="stylesheet" />
+<script src="~/assets/bootstraptable/src/bootstrap-table.js"></script>
+  <script>
+
+
+          $('#ResultList').bootstrapTable({
+              url: '/result/GetList',
+              method: 'post',
+              dataType: "json",
+            //  dataField: "data",
+              classes: 'table',//边框
+              undefinedText: '',//当数据为 undefined 时显示的字符
+              pagination: true,//启动分页
+              paginationLoop: true,
+              pageNumber: 1,
+              pageSize: 5,
+              pageList: [1, 5, 10, 20],
+              striped: true,
+              showColumns: true,  //显示下拉框勾选要显示的列
+              showRefresh: true,  //显示刷新按钮
+              showToggle: true,//显示一行是否改成竖着
+              showPaginationSwitch: true,//是否显示 下面的分页框
+              search: false, //显示搜索框
+              toolbarAlign: 'left',//工具栏对齐方式
+              buttonsAlign: 'right',//按钮对齐方式
+              toolbar: '#toolbar',
+
+              //服务器端分页
+              queryParamsType: "",//查询参数组织方式
+              queryParams: queryParams,//请求服务器时所传的参数
+              sidePagination: 'server',//指定服务器端分页
+
+              locale: 'zh-CN',//中文支持
+              detailView: true,//显示子表内容
+              toolbal: '#toolbar',
+              /*detailFormatter: function (index, row) {
+                  return JSON.stringify(row);
+              },*/
+              onExpandRow:function(index,row,$detail){
+                  oTableInit.InitSubTable(index, row, $detail);
+              },
+              columns: [{
+                  field: 'checkbox',
+                  title: 'checkbox',
+                  checkbox: true
+              }, {
+                  field: 'Id',  //真正序号隐藏
+                  title: '序号',
+                  sortable: true,
+                  visible: false,
+
+              }, {
+                  field: 'Ids',
+                  title: '序号',
+                  align: 'center',
+                  formatter: function (value, row, index) {
+                      var e = index+1;
+                      return e;
+                  }
+              }, {
+                  field: 'QuestionnaireName',
+                  title: '问卷名称',
+                  align: 'center'
+                 
+              }, {
+                  field: 'ClassName',
+                  title: '调查班级',
+                  align: 'center',            
+              }, {
+                  field: 'WritenTimes',
+                  title: '已填写人数',
+                  align: 'center'                
+              }, {
+                  field: 'TotalScore',
+                  title: '结果',
+                  align: 'center',
+                  formatter: function (value, row, index) {
+                      var result;
+                      if (value >= 0&&value<6) {
+                          result = '不合格';
+                      }                 
+                      if (value >= 6 && value < 8) {
+                          result = '合格';
+                      }
+                      if (value >= 8 && value < 9) {
+                          result = '良好';
+                      }
+                      if (value >= 9) {
+                          result = '优秀';
+                      }
+                      return result;
+                  }
+              }
+              ]
+              
+          });
+          function queryParams(params) {
+              
+              return {
+                  pageSize: params.pageSize,
+                  pageIndex: params.pageNumber,
+                  keyWord: params.searchText,
+                  TeacherId:@teacherId,
+              }
+          }
+
+</script>
+<script>
+        var oTableInit = new Object();
+        oTableInit.InitSubTable = function (index, row, $detail) {
+            var parentid = row.Id;
+            var cur_table = $detail.html('<table></table>').find('table');
+            $(cur_table).bootstrapTable({
+                url: '/result/GetModel?HeadId=' + parentid+"&Teacherid="+@teacherId,
+                method: 'post',
+                dataType: 'json',
+                dataField: 'data',
+                queryParams: { HeadId: parentid,TeacherId:@teacherId},
+                ajaxOptions: { HeadId: parentid ,TeacherId:@teacherId},
+                clickToSelect: true,
+                pagination: true, //是否显示分页（*）
+                sortOrder: "asc", //排序方式
+                pageNumber: 1, //初始化加载第一页，默认第一页
+                height: 260,
+                pageSize: 10, //每页的记录行数（*）
+               // pageList: [10, 20, 30, 48], //可供选择的每页的行数（*）
+                paginationPreText: '<', //上下翻页
+                paginationNextText: '>',
+                columns: [{
+                    title: "序号",
+                    formatter: function (value, row, index) {
+                        return index + 1;
+                    },
+                    rowspan: 1,
+                    align: 'center',
+                },{
+                    field: 'Question.Id',  //真正序号隐藏
+                    title: '题目号',
+                    sortable: true,
+                    visible: false
+                }, {
+                    field: 'Question.Content',
+                    title: '题目内容',
+                    align: 'center',
+                }, {
+                        field: 'AVGScore',
+                    title: '平均分',
+                    align: 'center',
+                    //formatter: function (value, row) {
+                    //    for (var i = 0; i < row.ScoreList.length; i++) {
+                    //        var value = rows.ScoreList[i];
+                    //    }
+                    //    return value;
+                    //}
+
+                }, {
+                    title: '评价',
+                    align: 'center',
+                    formatter: function (value, row) {
+                        var result;
+                        var value = row.AVGScore;
+                        if (value >= 0 && value < 6) {
+                            result = '不合格';
+                        }
+                        if (value >= 6 && value < 8) {
+                            result = '合格';
+                        }
+                        if (value >= 8 && value < 9) {
+                            result = '良好';
+                        }
+                        if (value >= 9) {
+                            result = '优秀';
+                        }
+                        return result;
+                    }
+
+                }
+                ],
+                //无限循环取子表，直到子表里面没有记录
+                responseHandler: function (res) {
+                    //在ajax获取到数据，渲染表格之前，修改数据源
+                    return res.Item;   //返回的子表数据
+                },
+                onExpandRow: function (index, row, $Subdetail) {
+                    oInit.InitSubTable(index, row, $Subdetail);
+                }
+            });
+            return oTableInit;
+        };
+
+</script>
+
+}

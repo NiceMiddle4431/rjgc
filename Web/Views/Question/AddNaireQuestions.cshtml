@@ -1,0 +1,244 @@
+﻿@using System.ComponentModel.Design
+
+@{
+    ViewBag.Title = "AddNaireQuestions";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    int Id = ViewBag.Id;
+    string QuestionnaireName = ViewBag.QuestionnaireName;
+}
+<h3><i class="fa fa-angle-right"></i> <a href='~/Question/Index'>问卷列表</a><i class="fa fa-angle-right"></i> @QuestionnaireName</h3>
+
+<div class="row mt">
+    <div class="col-lg-12">
+        <div class="content-panel">
+            <section id="unseen" style="margin-left:10px;margin-right:10px;">
+
+
+                <div id="toolbar" class="btn-group pull-right" style="margin-right: 20px;">
+
+                    <button id="btn_add" type="button" class="btn btn-default" data-toggle='modal' data-target='#AddModal'>
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>增加
+                    </button>
+                    <button id="btn_show" type="button" class="btn btn-default" data-toggle='modal' data-target='#ShowModal'>
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>问卷已选预览
+                    </button>
+                </div>
+                <table id="QuestionList"></table>
+            </section>
+        </div><!-- /content-panel -->
+    </div><!-- /col-lg-4 -->
+</div><!-- /row -->
+<!--show模态框-->
+<div class="modal fade" id="ShowModal" tabindex="-1" role="dialog" aria-labelledby="showModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="EditModalLabel">预览问卷</h4>
+            </div>
+            <div class="modal-body">
+                <form id="EditForm" class="form-horizontal style-form" method="post" action="##">
+                    <!--show-->
+                    <table class="table table-striped" id="tableId"></table>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="showClose">关闭</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--show模态框结束-->
+@section javascript{
+
+
+    <link href="~/assets/bootstraptable/src/bootstrap-table.css" rel="stylesheet" />
+    <script src="~/assets/bootstraptable/src/bootstrap-table.js"></script>
+
+
+    <script>
+
+        $("#QuestionList").bootstrapTable({
+            url: '/Question/GetQuestionList',
+            method: 'post',
+            dataType: "json",
+            // dataField: "data",
+
+            classes: 'table',//边框
+            undefinedText: '',//当数据为 undefined 时显示的字符
+            pagination: true,//启动分页
+            paginationLoop: true,
+            pageNumber: 1,
+            pageSize: 5,
+            pageList: [1, 5, 10, 20],
+            striped: true,
+            showColumns: true,  //显示下拉框勾选要显示的列
+            showRefresh: true,  //显示刷新按钮
+            showToggle: true,//显示一行是否改成竖着
+            showPaginationSwitch: true,//是否显示 下面的分页框
+            search: true, //显示搜索框
+            //toolbar操作
+            toolbarAlign: 'left',//工具栏对齐方式
+            buttonsAlign: 'right',//按钮对齐方式
+            toolbar: '#toolbar',//指定工作栏
+
+
+            //服务器端分页
+            // queryParamsType: 'limit',//查询参数组织方式
+            queryParamsType: "",
+            queryParams: queryParams,//请求服务器时所传的参数
+            sidePagination: 'server',//指定服务器端分页
+            locale: 'zh-CN',//中文支持,
+            // responseHandler:function(res){
+            //在ajax获取到数据，渲染表格之前，修改数据源
+            //   return res.rows;
+            // },
+
+            //  detailView: true,
+            toolbal: '#toolbar',
+
+            columns: [{
+                    field: 'checkbox',
+                    title: 'checkbox',
+                    checkbox: true
+                }, {
+                    field: 'Id',  //真正序号隐藏
+                    title: '序号',
+                    sortable: true,
+                    visible: false
+                }, {
+                    field: 'Ids',
+                    title: '序号',
+                    align: 'center',
+                    formatter: function(value, row, index) {
+                        var e = index+1;
+
+                        return e;
+                    }
+                }, {
+                    field: 'Content',
+                    title: '内容',
+                    align: 'center',
+                    sortable: true
+                }
+            ],
+        });
+
+        //请求服务数据时所传参数
+
+        function queryParams(params) {
+            return {
+                //每页多少条数据
+                // pageSize: params.limit,
+                //请求第几页
+                // pageIndex: params.offset+1
+                //Name: $('#search_name').val(),
+                //Tel: $('#search_tel').val()
+
+                pageSize: params.pageSize,
+                pageIndex: params.pageNumber,
+
+                keyWord: params.searchText
+            };
+        }
+
+
+
+    </script>
+    <!--添加题目-->
+    <script>
+        $("#btn_add").click(function () {
+
+            var HeadId=@Id;
+            $.ajax({
+                type: "POST",
+                url: "/Question/getQuestionCount",
+                data: {
+                    HeadId: HeadId
+                },
+                dataType: 'JSON',
+                success: function (result) {
+
+                    var ids = $.map(
+                        $('#QuestionList').bootstrapTable('getSelections'),
+                        function(row) {
+                            return row.Id;
+                        });
+                    var num=result+ids.length;
+                    if (num > 10) {
+                        alert("当前添加问题超出问题总额！请重新选择！");
+                    } else {
+                        if (num<10) {
+                            alert("请注意问题添加后总额为"+num+"未达到10，将不会发放问卷！");
+                        }
+                        //调用ajax，add Question
+                        $.ajax({
+                            type: "POST",
+                            url: "/Question/saveNaireQuestions",
+                            data: {
+                                ids: ids,
+                                HeadId:HeadId
+                            },
+                            dataType: 'JSON',
+                            success: function(data) {
+
+                                alert(data);
+                                $("#QuestionList").bootstrapTable('refresh');
+
+                            }
+                        });
+                    }
+
+                }
+            });
+
+        });
+    </script>
+    <!--show-->
+    <script>
+        $("#btn_show").click(function () {
+            var HeadId=@Id;
+
+            //调用ajax，add Question
+            $.ajax({
+                type: "POST",
+                url: "/Question/showNaireQuestion",
+                data: {
+
+                    HeadId:HeadId
+                },
+                dataType: 'JSON',
+                success: function(data) {
+
+                    //创建
+                    $("#tableId").empty();
+                    for (var i = 0; i < data.length; i++) {
+                        $("#tableId").append("<tr id=\""+data[i].Id+"\"><td>" + data[i].Content + "</td><td><a onclick=\"deleteNaireQuestion("+data[i].Id+")\">删除</a></td></tr>");
+                    }
+
+                }
+            });
+        });
+    </script>
+    <!--delete-->
+    <script>
+        function deleteNaireQuestion(Id) {
+            $.ajax({
+                type: "POST",
+                url: "/Question/deleteNaireQuestion",
+                data: {
+                    Id: Id
+                },
+                dataType: 'JSON',
+                success: function (data) {
+                    //显示删除成功
+                    $("#" + Id).remove();
+
+                }
+            });
+        }
+    </script>
+
+}

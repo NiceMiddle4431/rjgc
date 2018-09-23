@@ -1,0 +1,54 @@
+D:\VS2015解决方案\软件工程课设\BLL\bin\Debug\BLL.dll
+D:\VS2015解决方案\软件工程课设\BLL\bin\Debug\BLL.pdb
+D:\VS2015解决方案\软件工程课设\BLL\bin\Debug\DAL.dll
+D:\VS2015解决方案\软件工程课设\BLL\bin\Debug\Model.dll
+D:\VS2015解决方案\软件工程课设\BLL\bin\Debug\DAL.pdb
+D:\VS2015解决方案\软件工程课设\BLL\bin\Debug\Model.pdb
+D:\VS2015解决方案\软件工程课设\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+D:\VS2015解决方案\软件工程课设\BLL\obj\Debug\BLL.dll
+D:\VS2015解决方案\软件工程课设\BLL\obj\Debug\BLL.pdb
+D:\VS2015解决方案\rjgc_keshe\BLL\bin\Debug\BLL.dll
+D:\VS2015解决方案\rjgc_keshe\BLL\bin\Debug\BLL.pdb
+D:\VS2015解决方案\rjgc_keshe\BLL\bin\Debug\DAL.dll
+D:\VS2015解决方案\rjgc_keshe\BLL\bin\Debug\Model.dll
+D:\VS2015解决方案\rjgc_keshe\BLL\bin\Debug\DAL.pdb
+D:\VS2015解决方案\rjgc_keshe\BLL\bin\Debug\Model.pdb
+D:\VS2015解决方案\rjgc_keshe\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+D:\VS2015解决方案\rjgc_keshe\BLL\obj\Debug\BLL.dll
+D:\VS2015解决方案\rjgc_keshe\BLL\obj\Debug\BLL.pdb
+D:\VS2015解决方案\rjgc\BLL\bin\Debug\BLL.dll
+D:\VS2015解决方案\rjgc\BLL\bin\Debug\BLL.pdb
+D:\VS2015解决方案\rjgc\BLL\bin\Debug\DAL.dll
+D:\VS2015解决方案\rjgc\BLL\bin\Debug\Model.dll
+D:\VS2015解决方案\rjgc\BLL\bin\Debug\DAL.pdb
+D:\VS2015解决方案\rjgc\BLL\bin\Debug\Model.pdb
+D:\VS2015解决方案\rjgc\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+D:\VS2015解决方案\rjgc\BLL\obj\Debug\BLL.dll
+D:\VS2015解决方案\rjgc\BLL\obj\Debug\BLL.pdb
+E:\大三下\软件课程设计\rjgc-master\BLL\bin\Debug\BLL.dll
+E:\大三下\软件课程设计\rjgc-master\BLL\bin\Debug\BLL.pdb
+E:\大三下\软件课程设计\rjgc-master\BLL\bin\Debug\DAL.dll
+E:\大三下\软件课程设计\rjgc-master\BLL\bin\Debug\Model.dll
+E:\大三下\软件课程设计\rjgc-master\BLL\bin\Debug\DAL.pdb
+E:\大三下\软件课程设计\rjgc-master\BLL\bin\Debug\Model.pdb
+E:\大三下\软件课程设计\rjgc-master\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+E:\大三下\软件课程设计\rjgc-master\BLL\obj\Debug\BLL.dll
+E:\大三下\软件课程设计\rjgc-master\BLL\obj\Debug\BLL.pdb
+D:\VS2015解决方案\最终版\rjgc-master\BLL\bin\Debug\BLL.dll
+D:\VS2015解决方案\最终版\rjgc-master\BLL\bin\Debug\BLL.pdb
+D:\VS2015解决方案\最终版\rjgc-master\BLL\bin\Debug\DAL.dll
+D:\VS2015解决方案\最终版\rjgc-master\BLL\bin\Debug\Model.dll
+D:\VS2015解决方案\最终版\rjgc-master\BLL\bin\Debug\DAL.pdb
+D:\VS2015解决方案\最终版\rjgc-master\BLL\bin\Debug\Model.pdb
+D:\VS2015解决方案\最终版\rjgc-master\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+D:\VS2015解决方案\最终版\rjgc-master\BLL\obj\Debug\BLL.dll
+D:\VS2015解决方案\最终版\rjgc-master\BLL\obj\Debug\BLL.pdb
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\BLL\bin\Debug\BLL.dll
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\BLL\bin\Debug\BLL.pdb
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\BLL\bin\Debug\DAL.dll
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\BLL\bin\Debug\Model.dll
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\BLL\bin\Debug\DAL.pdb
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\BLL\bin\Debug\Model.pdb
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\BLL\obj\Debug\BLL.dll
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\BLL\obj\Debug\BLL.pdb

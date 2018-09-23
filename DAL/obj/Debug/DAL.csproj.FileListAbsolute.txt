@@ -1,0 +1,42 @@
+D:\VS2015解决方案\软件工程课设\DAL\bin\Debug\DAL.dll
+D:\VS2015解决方案\软件工程课设\DAL\bin\Debug\DAL.pdb
+D:\VS2015解决方案\软件工程课设\DAL\bin\Debug\Model.dll
+D:\VS2015解决方案\软件工程课设\DAL\bin\Debug\Model.pdb
+D:\VS2015解决方案\软件工程课设\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\VS2015解决方案\软件工程课设\DAL\obj\Debug\DAL.dll
+D:\VS2015解决方案\软件工程课设\DAL\obj\Debug\DAL.pdb
+D:\VS2015解决方案\rjgc_keshe\DAL\bin\Debug\DAL.dll
+D:\VS2015解决方案\rjgc_keshe\DAL\bin\Debug\DAL.pdb
+D:\VS2015解决方案\rjgc_keshe\DAL\bin\Debug\Model.dll
+D:\VS2015解决方案\rjgc_keshe\DAL\bin\Debug\Model.pdb
+D:\VS2015解决方案\rjgc_keshe\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\VS2015解决方案\rjgc_keshe\DAL\obj\Debug\DAL.dll
+D:\VS2015解决方案\rjgc_keshe\DAL\obj\Debug\DAL.pdb
+D:\VS2015解决方案\rjgc\DAL\bin\Debug\DAL.dll
+D:\VS2015解决方案\rjgc\DAL\bin\Debug\DAL.pdb
+D:\VS2015解决方案\rjgc\DAL\bin\Debug\Model.dll
+D:\VS2015解决方案\rjgc\DAL\bin\Debug\Model.pdb
+D:\VS2015解决方案\rjgc\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\VS2015解决方案\rjgc\DAL\obj\Debug\DAL.dll
+D:\VS2015解决方案\rjgc\DAL\obj\Debug\DAL.pdb
+E:\大三下\软件课程设计\rjgc-master\DAL\bin\Debug\DAL.dll
+E:\大三下\软件课程设计\rjgc-master\DAL\bin\Debug\DAL.pdb
+E:\大三下\软件课程设计\rjgc-master\DAL\bin\Debug\Model.dll
+E:\大三下\软件课程设计\rjgc-master\DAL\bin\Debug\Model.pdb
+E:\大三下\软件课程设计\rjgc-master\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\大三下\软件课程设计\rjgc-master\DAL\obj\Debug\DAL.dll
+E:\大三下\软件课程设计\rjgc-master\DAL\obj\Debug\DAL.pdb
+D:\VS2015解决方案\最终版\rjgc-master\DAL\bin\Debug\DAL.dll
+D:\VS2015解决方案\最终版\rjgc-master\DAL\bin\Debug\DAL.pdb
+D:\VS2015解决方案\最终版\rjgc-master\DAL\bin\Debug\Model.dll
+D:\VS2015解决方案\最终版\rjgc-master\DAL\bin\Debug\Model.pdb
+D:\VS2015解决方案\最终版\rjgc-master\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\VS2015解决方案\最终版\rjgc-master\DAL\obj\Debug\DAL.dll
+D:\VS2015解决方案\最终版\rjgc-master\DAL\obj\Debug\DAL.pdb
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\DAL\bin\Debug\DAL.dll
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\DAL\bin\Debug\DAL.pdb
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\DAL\bin\Debug\Model.dll
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\DAL\bin\Debug\Model.pdb
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\DAL\obj\Debug\DAL.dll
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\DAL\obj\Debug\DAL.pdb

@@ -1,0 +1,92 @@
+﻿@using System.Data
+
+@{
+    ViewBag.Title = "Questionnaire";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Model.QuestionnaireHead> lstHead = ViewBag.lstHead;
+    List<Model.Question> lstBody = ViewBag.lstBody;
+    string className = ViewBag.className;
+    string schoolName = ViewBag.schoolName;
+    string TeacherName = ViewBag.TeacherName;
+    int StudentId = ViewBag.StudentId;
+    int TeacherId = ViewBag.TeacherId;
+
+}
+
+<h2 style="text-align: center;color:dodgerblue">@lstHead[0].QuestionnaireName</h2>
+<h5 style="text-align: center;"><b>学校：@schoolName 班级：@className 调查对象：@TeacherName 开始时间：@lstHead[0].StartTime 结束时间：@lstHead[0].EndTime</b></h5>
+<table class="table " id="NaireBody">
+    @foreach (var item in lstBody)
+    {
+        <tr>
+            <td width="100px"></td>
+            <td>
+                @item.Content
+            </td>
+
+            <td width="150px">
+                <select class="form-control round-form" id="@item.Id" name="@item.Id">
+                    <option value='2' selected='selected'>非常不满意</option>"
+                    <option value='4'>不满意</option>"
+                    <option value='6'>一般</option>"
+                    <option value='8'>满意</option>"
+                    <option value='10'>非常满意</option>"
+
+                </select>
+
+            </td>
+            <td width="100px"></td>
+        </tr>
+
+    }
+    <tr>
+        <td width="100px"></td>
+        <td></td>
+        <td width="50px"><button type="button" class="btn btn-info" onclick="saveScore()">提交</button></td>
+        <td width="100px"></td>
+    </tr>
+</table>
+
+@section javascript{
+    <script>
+        function saveScore() {
+
+            var StudentId=@StudentId;
+            var QuestionnaireHeadId=@lstHead[0].Id;
+            var TeacherId=@TeacherId;
+
+            var table = document.getElementById("NaireBody");
+            var selects = table.getElementsByTagName("select");
+
+            var tenScore = selects[0].value+"";
+
+            //var TotalScore = parseInt(inputs[0].value);
+            for (var i = 1; i < selects.length; i++) {
+                var s = selects[i].value;
+                tenScore += "," + s;
+                //TotalScore += parseInt(s);
+
+            }
+           // alert(tenScore);
+            $.ajax({
+                type: "POST",
+                url: "/Write/saveWriteResult",
+                data: {
+                    StudentId: StudentId,
+                    QuestionnaireHeadId:QuestionnaireHeadId,
+                    TeacherId:TeacherId,
+                    tenScore:tenScore,
+                    //TotalScore:TotalScore
+                },
+                dataType: 'JSON',
+                success: function (data) {
+                    //显示保存成功
+                    window.location.href="/Write/Index?studentId=@StudentId";//需要跳转的地址
+
+                }
+            });
+
+        }
+    </script>
+
+}

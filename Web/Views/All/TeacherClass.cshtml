@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewBag.Title = "TeacherClass";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int teacherId = ViewBag.TeacherId;
+    int schoolId = ViewBag.SchoolId;
+    int classId = ViewBag.ClassId;
+}
+
+<h3><a href="/All/Index"><i class="fa fa-angle-right"></i>查看学校结果</a>
+    <a href="/All/SchoolTeacher?SchoolId=@schoolId"><i class="fa fa-angle-right"></i>查看教师结果</a>
+    <i class="fa fa-angle-right"></i>查看教师所教班级结果</h3>
+<div class="row mt">
+    <div class="col-lg-12">
+        <div class="content-panel">
+            <section id="unseen" style="margin-left:10px;margin-right:10px;">
+                <table id="ResultList"></table>
+            </section>
+        </div><!-- /content-panel -->
+    </div><!-- /col-lg-4 -->
+</div><!-- /row -->
+
+@section javascript{
+    <link href="~/assets/bootstraptable/src/bootstrap-table.css" rel="stylesheet" />
+    <script src="~/assets/bootstraptable/src/bootstrap-table.js"></script>
+    <script>
+        $('#ResultList').bootstrapTable({
+            url: '/All/GetTeacherClassScore?TeacherId='+@teacherId+"&ClassId="+@classId,
+            method: 'post',
+            dataType: "json",
+            //  dataField: "data",
+            classes: 'table',//边框
+            undefinedText: '',//当数据为 undefined 时显示的字符
+            pagination: true,//启动分页
+            paginationLoop: true,
+            pageNumber: 1,
+            pageSize: 10,
+            //pageList: [1, 5, 10, 20],
+            striped: true,
+            showColumns: true,  //显示下拉框勾选要显示的列
+            showRefresh: true,  //显示刷新按钮
+            showToggle: true,//显示一行是否改成竖着
+            showPaginationSwitch: true,//是否显示 下面的分页框
+            search: true, //显示搜索框
+            toolbarAlign: 'left',//工具栏对齐方式
+            buttonsAlign: 'right',//按钮对齐方式
+            toolbar: '#toolbar',
+            sidePagination: 'client',//指定服务器端分页
+
+            locale: 'zh-CN',//中文支持
+            toolbal: '#toolbar',
+
+            columns: [{
+                field: 'checkbox',
+                title: 'checkbox',
+                checkbox: true
+            }, {
+                field: 'TeacherId',  //真正序号隐藏
+                title: '序号',
+                sortable: true,
+                visible: false
+            }, {
+                field: 'Ids',
+                title: '序号',
+                align: 'center',
+                formatter: function (value, row, index) {
+                    var e = index + 1;
+                    return e;
+                }
+            }, {
+                title: '试卷题目',
+                align: 'center',
+                formatter: function (value, row, index) {
+                    var t = (index%10);
+                    return row.Question[t].Content;
+                }
+            }, { 
+                title: '平均分',
+                align: 'center',
+                sortable:true,
+                formatter: function (value, row, index) {                 
+                    var t = (index%10);
+                    return row.QScore[t];
+                   
+                } 
+            },{ 
+                title: '结果',
+                align: 'center',
+                formatter: function (value, row, index) {
+                    var t = (index%10);
+                    var result;
+                    var value= row.QScore[t];
+                    if (value >= 0 && value < 6) {
+                        result = '不合格';
+                    }
+                    if (value >= 6 && value < 8) {
+                        result = '合格';
+                    }
+                    if (value >= 8 && value < 9) {
+                        result = '良好';
+                    }
+                    if (value >= 9) {
+                        result = '优秀';
+                    }
+                    return result;
+                }
+            }]
+
+        });
+    </script>
+}
+

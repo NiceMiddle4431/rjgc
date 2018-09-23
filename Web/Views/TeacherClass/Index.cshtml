@@ -1,0 +1,229 @@
+﻿
+@{
+    ViewBag.Title = "index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int teacherId = ViewBag.teacherId;
+}
+
+@section css{
+
+}
+
+<h3><i class="fa fa-angle-right"></i><a href="/teacher/index">教师列表</a><i class="fa fa-angle-right"></i> 教师所教班级</h3>
+
+<div class="row mt">
+    <div class="col-lg-12">
+        <div class="content-panel">
+            <section id="unseen" style="margin-left:10px;margin-right:10px;">
+                <!--操作按钮，班级的多条删除和添加-->
+                <div class="btn-group pull-right" id="toolbar">
+                    <button id="AddClass" type="button" class="btn btn-default" data-toggle='modal' data-target='#AddModal'>
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加
+                    </button>
+                    <button id="DeleteClass" type="button" class="btn btn-default" style="">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除
+                    </button>
+                </div>
+                <!--操作按钮，班级的多条删除和添加结束-->
+                <table id="TeacherClassList"></table><!--显示教师信息的表格-->
+            </section>
+        </div><!-- /content-panel -->
+    </div><!-- /col-lg-4 -->
+</div><!-- /row -->
+<!--添加时模态框-->
+<div class="modal fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="AddModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="AddModalLabel">添加教师所教班级</h4>
+            </div>
+            <div class="modal-body">
+                <form id="EditForm" class="form-horizontal style-form" method="post" action="##">
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label">班级名称</label>
+                        <div class="col-sm-6">
+                            <select class="form-control round-form" id="AddClassId" ,name="AddClassId"></select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="AddClose">关闭</button>
+                <button type="submit" class="btn btn-primary" id="AddSubmit">提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--添加时模态框结束-->
+<div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="EditModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="AddModalLabel">修改教师所教班级</h4>
+            </div>
+            <div class="modal-body">
+                <form id="EditForm" class="form-horizontal style-form" method="post" action="##">
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label">班级名称</label>
+                        <div class="col-sm-6">
+                            <select class="form-control round-form" id="EditClassId" ,name="EditClassId"></select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="EditClose">关闭</button>
+                <button type="submit" class="btn btn-primary" id="EditSubmit">提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section javascript{
+    <link href="~/assets/bootstraptable/src/bootstrap-table.css" rel="stylesheet" />
+    <script src="~/assets/bootstraptable/src/bootstrap-table.js"></script>
+    <!--表格加载-->
+    <script>
+        $("#TeacherClassList").bootstrapTable({
+            url: "/TeacherClass/GetList",// 获取表格数据的url
+            contentType: "application/x-www-form-urlencoded",//一种编码。好像在post请求的时候需要用到。这里用的get请求，注释掉这句话也能拿到数据
+            method: 'post',//请求方式
+            dataType: "json",
+            dataField: "rows",
+            classes: 'table',//边框
+            undefinedText: '',//当数据为 undefined 时显示的字符
+            pagination: true,//启动分页
+            striped: true,
+            cache: true, // 设置为 false 禁用 AJAX 数据缓存， 默认为true
+            striped: true,  //表格显示条纹，默认为false
+            pagination: true, // 在表格底部显示分页组件，默认false
+            pageList: [5, 10, 20], // 设置页面可以显示的数据条数
+            pageSize: 5, // 页面数据条数
+            pageNumber: 1, // 首页页码
+            showColumns: false,  //显示下拉框勾选要显示的列
+            showRefresh: false,  //显示刷新按钮
+            showToggle: false,//显示一行是否改成竖着
+            showPaginationSwitch: false,//是否显示 下面的分页框
+            search: false, //显示搜索框
+            //toolbar操作
+            toolbar: '#toolbar',//工具按钮用哪个容器
+            toolbarAligh: 'left',//工具栏对齐方式
+            buttonsAligh: 'right',//按钮对齐方式
+
+            sortOrder: "asc",//排序方式
+            locale: 'zh-CN',//中文支持
+            sidePagination: 'server', // 设置为服务器端分页
+            queryParamsType: '',//采用自定义查询参数组织方式
+            queryParams: function (params) { // 请求服务器数据时发送的参数，可以在这里添加额外的查询参数，返回false则终止请求
+                return {
+                    teacherId:@teacherId,
+                    pageSize: params.pageSize, // 每页要显示的数据条数
+                    pageNumber: params.pageNumber//请求第几页
+                }
+            },
+            columns: [{
+                checkbox: true
+            }, {
+                field: 'Id',
+                title: '教师Id',
+                visible: false,
+                align: 'center'
+            }, {
+                field: 'TeacherWorkNum',
+                title: '教工号',
+                align: 'center'
+            }, {
+                field: 'TeacherName',
+                title: '教师姓名',
+                align: 'center'
+            }, {
+                field: 'Course.CourseName',
+                title: '所教课程',
+                align: 'center',
+                visible: false
+            }, {
+                field:'TempClass.Id',
+                title:'所教班级Id',
+                visible: false,
+                align:'center'
+            },{
+                field:'TempClass.ClassName',
+                title:'所教班级',
+                align:'center'
+                            
+            }]
+        })
+    </script>
+    <!--表格加载结束-->
+    <!--添加班级开始-->
+    <script>
+        $("#AddClass").click(function(){
+            $.ajax({            //获取学生班级信息
+                async: false,
+                url: "/TeacherClass/GetClass",
+                data: { TeacherId: @teacherId },
+                type: "POST",
+                dataType: "JSON",
+                success: function (tempClass) {
+                    $("#AddClassId").empty();
+                    for (var i = 0; i < tempClass.length; i++) {
+                        if (i==0) {
+                            $("#AddClassId").append("<option value='" + tempClass[i].Id + "' selected='selected'>" + tempClass[i].ClassName + "</option>")
+                        } else {
+                            $("#AddClassId").append("<option value='" + tempClass[i].Id + "'>" + tempClass[i].ClassName + "</option>")
+                        }
+                    }
+                }
+            })
+        })
+        $("#AddSubmit").click(function(){
+            $.ajax({
+                url: "/TeacherClass/AddSave",
+                data: {
+                    AddTeacherId:@teacherId,
+                    AddClassId: $('#AddClassId').val(),
+                },
+                type: "POST",
+                dataType: "json",
+                success: function (result) {
+                    $("#AddClose").click();
+                    alert(result);
+                    $("#TeacherClassList").bootstrapTable('refresh');
+                }
+            })
+        })
+    </script>
+    <!--添加班级结束-->
+    <!--删除班级开始-->
+    <script>
+        $("#DeleteClass").click(function () {
+            var ids = $.map($("#TeacherClassList").bootstrapTable('getSelections'),
+                function (row) {
+                    return row.TempClass["Id"];
+                })
+            if (ids.length <= 0) {
+                alert("请选择至少一条的删除记录");
+            } else {
+                if (confirm("确定删除？")) {
+                    $.ajax({
+                        url: "/TeacherClass/Delete",
+                        type: "POST",
+                        data: {
+                            DeleteTeacherId: @teacherId,
+                            DeleteClassIds:ids
+                        },
+                        dataType: "json",
+                        success: function (result) {
+                            alert(result);
+                            $("#TeacherClassList").bootstrapTable('refresh');
+                        }
+                    })
+                }
+            }
+        })
+    </script>
+
+    <!--删除班级结束-->
+}
+

@@ -1,0 +1,544 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section css{
+
+}
+<h3><i class="fa fa-angle-right"></i> 学生列表</h3>
+
+<div class="row mt">
+    <div class="col-lg-12">
+        <div class="content-panel">
+            <section id="unseen" style="margin-left:10px;margin-right:10px;">
+                <!--操作按钮，学生的多条删除和单人添加-->
+                <div class="panel panel-default">
+                    <div class="panel-heading">查询内容</div>
+                    <div class="panel-body">
+                        <div id="query-form" style="padding-bottom:10px;">
+                            <label style="float:left;padding-left:10px;padding-top:10px;color:dodgerblue;font-weight:800">班级名：</label>
+                            <input id="txtClassName" name="txtClassName" placeholder="请输入班级名称" type="text"
+                                   style="float:left;width:150px;margin-right:5px;" v-model="lookupType"
+                                   class="form-control">
+                            <label style="float:left;padding-left:20px;padding-top:10px;color:dodgerblue;font-weight:800">学号：</label>
+                            <div style="float:left;margin-right:5px;">
+                                <input id="txtStudentNum" name="txtStudentNum" placeholder="请输入学生学号" type="text"
+                                       style="float:left;width:150px;margin-right:5px;" v-model="description"
+                                       class="form-control">
+                            </div>
+                            <label style="float:left;padding-left:20px;padding-top:10px;color:dodgerblue;font-weight:800">学生名：</label>
+                            <div style="float:left;margin-right:5px;">
+                                <input id="txtStudentName" name="txtStudentName" placeholder="请输入学生名字" type="text"
+                                       style="float:left;width:150px;margin-right:5px;" v-model="description"
+                                       class="form-control">
+                            </div>
+                          
+                            <div class="btn-group" style="padding-left:20px;">
+                                <button id="btn_search" type="button" class="btn btn-primary btn-space">
+                                    查询
+                                    <span class="fa fa-search" aria-hidden="true"></span>
+                                </button>
+                                <button id="btn_reset" type="button" class="btn btn-default btn-space">
+                                    重置
+                                    <span class="fa fa-eraser" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-group pull-right" id="toolbar">
+                    <button id="AddStudent" type="button" class="btn btn-default" data-toggle='modal' data-target='#AddModal'>
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加
+                    </button>
+                    <button id="AddStudents" type="button" class="btn btn-default" data-toggle='modal' data-target='#AddExcel'>
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>批量添加
+                    </button>
+                    <button id="DeleteStudents" type="button" class="btn btn-default" style="">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除
+                    </button>
+                </div>
+                <!--操作按钮，学生的多条删除和单人添加结束-->
+                <table id="StudentList"></table><!--显示学生信息的表格-->
+            </section>
+        </div><!-- /content-panel -->
+    </div><!-- /col-lg-4 -->
+</div><!-- /row -->
+<!--添加时模态框-->
+<div class="modal fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="AddModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="AddModalLabel">添加学生信息</h4>
+            </div>
+            <div class="modal-body">
+                <form id="EditForm" class="form-horizontal style-form" method="post" action="##">
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label">学号</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control round-form" id="AddStudentNum" name="AddtStudentNum">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label">学生姓名</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control round-form" id="AddStudentName" name="AddStudentName">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 col-sm-3 control-label">性别</label>
+                        <div class="radio">
+                            <label class="col-sm-2 col-sm-2 control-label">
+                                <input type="radio" name="AddSex" id="AddSex" value="1">
+                                男
+                            </label>
+                            <label class="col-sm-2 col-sm-2 control-label">
+                                <input type="radio" name="AddSex" id="AddSex" value="0">
+                                女
+                            </label>
+                        </div>
+                    </div> 
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label">学校</label>
+                        <div class="col-sm-6">
+                            <select class="form-control round-form" id="AddSchool" ,name="AddSchool"></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label">班级</label>
+                        <div class="col-sm-6">
+                            <select class="form-control round-form" id="AddClass" name="AddtClass"></select>
+                        </div>
+                    </div>
+                   
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label">学生密码</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control round-form" id="AddStudentPWD" name="AddStudentPWD">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="AddClose">关闭</button>
+                <button type="submit" class="btn btn-primary" id="AddSubmit">提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--添加时模态框结束-->
+<div class="modal fade" id="AddExcel" tabindex="-1" role="dialog" aria-labelledby="AddModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form class="form-horizontal style-form" method="post" action="/Student/AddExcel" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">请选择Excel文件</h4>
+                        </div>
+                        <div class="modal-body">
+                            <input type="file" class="form-control" id="txt_file" name="txt_file" accept="xlsx/*" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" id="AddClose">关闭</button>
+                        <button type="submit" class="btn btn-primary" id="AddExcelSubmit">提交</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--修改时模态框-->
+<div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="EditModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="EditModalLabel">修改学生信息</h4>
+            </div>
+            <div class="modal-body">
+                <form id="EditForm" class="form-horizontal style-form" method="post" action="##">
+                    <div class="form-group hidden">
+                        <label class="col-sm-2 col-sm-2 control-label">Id</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control round-form" id="EditId" name="EditId">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label">学号</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control round-form" id="EditStudentNum" name="EditStudentNum">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label">学生姓名</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control round-form" id="EditStudentName" name="EditStudentName">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 col-sm-3 control-label">性别</label>
+                        <div class="radio">
+                            <label class="col-sm-2 col-sm-2 control-label">
+                                <input type="radio" name="EditSex" id="EditSex1" value="1">
+                                男
+                            </label>
+                            <label class="col-sm-2 col-sm-2 control-label">
+                                <input type="radio" name="EditSex" id="EditSex0" value="0">
+                                女
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label">学校</label>
+                        <div class="col-sm-6">
+                            <select class="form-control round-form" id="EditSchool" ,name="EditSchool"></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label">班级</label>
+                        <div class="col-sm-6">
+                            <select class="form-control round-form" id="EditClass" name="EditClass"></select>
+                        </div>
+                    </div>               
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label">学生密码</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control round-form" id="EditStudentPWD" name="EditStudentPWD">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="EditClose">关闭</button>
+                <button type="submit" class="btn btn-primary" id="EditSubmit">提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--修改时模态框结束-->
+@section javascript{
+    <link href="~/assets/bootstraptable/src/bootstrap-table.css" rel="stylesheet" />
+    <script src="~/assets/bootstraptable/src/bootstrap-table.js"></script>
+
+    <!--表格加载-->
+    <script>
+        $("#StudentList").bootstrapTable({
+            url: "/Student/GetList",// 获取表格数据的url
+            contentType: "application/x-www-form-urlencoded",//一种编码。好像在post请求的时候需要用到。这里用的get请求，注释掉这句话也能拿到数据
+            method: 'post',//请求方式
+            dataType: "json",
+            dataField: "rows",
+            classes: 'table',//边框
+            undefinedText: '',//当数据为 undefined 时显示的字符
+            pagination: true,//启动分页
+            striped: true,
+            cache: true, // 设置为 false 禁用 AJAX 数据缓存， 默认为true
+            striped: true,  //表格显示条纹，默认为false
+            pagination: true, // 在表格底部显示分页组件，默认false
+            pageList: [5, 10, 20], // 设置页面可以显示的数据条数
+            pageSize: 5, // 页面数据条数
+            pageNumber: 1, // 首页页码
+            showColumns: false,  //显示下拉框勾选要显示的列
+            showRefresh: false,  //显示刷新按钮
+            showToggle: false,//显示一行是否改成竖着
+            showPaginationSwitch: false,//是否显示 下面的分页框
+            search: false, //显示搜索框
+            //toolbar操作
+            toolbar: '#toolbar',//工具按钮用哪个容器
+            toolbarAligh: 'left',//工具栏对齐方式
+            buttonsAligh: 'right',//按钮对齐方式
+
+            sortOrder: "asc",//排序方式
+            locale: 'zh-CN',//中文支持
+            sidePagination: 'server', // 设置为服务器端分页
+            queryParamsType: '',//采用自定义查询参数组织方式
+            queryParams: function (params) { // 请求服务器数据时发送的参数，可以在这里添加额外的查询参数，返回false则终止请求               
+                var ClassName = $("#txtClassName").val();
+                var StudentNum = $("#txtStudentNum").val();
+                var StudentName = $("#txtStudentName").val();
+                return {
+                    pageSize: params.pageSize, // 每页要显示的数据条数
+                    pageNumber: params.pageNumber,//请求第几页                  
+                    ClassName: ClassName,
+                    StudentNum: StudentNum,
+                    StudentName:StudentName
+                }
+            },
+            columns: [{
+                checkbox: true
+            }, {
+                field: 'Id',
+                title: '学生Id',
+                visible: false,
+                align: 'center'
+            }, {
+                field: 'StudentNum',
+                title: '学号',
+                align: 'center'
+            }, {
+                field: 'StudentName',
+                title: '学生姓名',
+                align: 'center'
+            }, {
+                field: 'Sex',
+                title: '性别',
+                align: 'center',
+                formatter: function (value, row, index) {
+                    var sex=row.Sex;
+                    if (sex == 0) {
+                        sex = '女';
+                    } else if (sex == 1) {
+                        sex = '男';
+                    }
+                    return sex;
+                }
+            }, {
+                field: 'Class.ClassName',
+                title: '班级',
+                align: 'center'
+            }, {
+                field: 'School.SchoolName',
+                title: '学校',
+                align: 'center'
+            }, {
+                title: '操作',
+                align: 'center',
+                formatter: function (value, row, index) {
+                    return "<button onclick=\"Edit(" + row.Id +
+                        ")\" data-toggle='modal' data-target='#EditModal' class=\"btn btn-info btn-sm\">" +
+                        "<span class='glyphicon glyphicon-pencil' aria-hidden='true'>修改</span></button>"
+                }
+            }]
+        })
+        $("#btn_search").click(function () {
+            $('#StudentList').bootstrapTable('refresh');//刷新Table，Bootstrap Table 会自动执行重新查询
+        });
+        $("#btn_reset").click(function () {
+            $("#txtClassName").val("");
+            $("#txtStudentName").val("");
+            $("#txtStudentNum").val("");
+        });
+    </script>
+    <!--表格加载结束-->
+    <!--ajax提交添加学生信息-->
+    <script>
+        $("#AddStudent").click(function () {
+            $.ajax({               //获取学生学校信息
+                async: false,
+                url: "/Student/GetSchool",
+                type: "POST",
+                dataType: "JSON",
+                success: function (school) {
+                    $("#Addchool").empty();
+                    for (var i = 0; i < school.length; i++) {
+                        if (i == 0) {
+                            $("#AddSchool").append("<option value='" + school[i].Id + "' selected='selected'>" + school[i].SchoolName + "</option>")
+                        } else {
+                            $("#AddSchool").append("<option value='" + school[i].Id + "'>" + school[i].SchoolName + "</option>")
+                        }
+
+                    }
+                    $.ajax({            //获取学生班级信息
+                        async: false,
+                        url: "/Student/GetClass",
+                        data: { SchoolId: $('#AddSchool').val() },
+                        type: "POST",
+                        dataType: "JSON",
+                        success: function (tempClass) {
+                            $("#AddClass").empty();
+                            for (var i = 0; i < tempClass.length; i++) {
+                                if (i == 0) {
+                                    $("#AddClass").append("<option value='" + tempClass[i].Id + "' selected='selected'>" + tempClass[i].ClassName + "</option>")
+                                } else {
+                                    $("#AddClass").append("<option value='" + tempClass[i].Id + "'>" + tempClass[i].ClassName + "</option>")
+                                }
+
+                            }
+                        }
+                    })
+                }
+            })
+
+            //学校变更时班级信息变更
+            $("#AddSchool").change(function () {
+                var schoolId = $("#AddSchool").val();
+                $.ajax({
+                    async: false,
+                    url: "/Student/GetClass?SchoolId = ",
+                    data: { schoolId},
+                            type: "POST",
+                            dataType: "JSON",
+                            success: function (tempClass) {
+                        $("#AddClass").empty();
+                        for (var i = 0; i < tempClass.length; i++) {
+                            $("#AddClass").append("<option value='" +tempClass[i].Id + "'>" +tempClass[i].ClassName + "</option>")
+                    }
+                    }
+                    })
+            })
+
+ 
+        })
+        //提交学生信息
+        $("#AddSubmit").click(function () {
+            $.ajax({
+                url: "/Student/AddSave",
+                data: {
+                    AddStudentNum: $("#AddStudentNum").val(),
+                    AddStudentName: $("#AddStudentName").val(),
+                    AddSex: jQuery('[name="AddSex"]:checked').val(),
+                    AddClass: $("#AddClass").val(),
+                    AddSchool: $("#AddSchool").val(),
+                    AddStudentPWD: $("#AddStudentPWD").val(),
+                },
+                type: "POST",
+                dataType: "json",
+                success: function (result) {
+                    $("#AddClose").click();
+                    alert(result);
+                    $("#StudentList").bootstrapTable('refresh');
+                }
+            })
+        })
+
+    </script>
+    <!--ajax提交添加学生信息结束-->
+    <!--向修改模态框添加待编辑学生信息-->
+    <script>
+        //编辑学生信息
+        function Edit(Id) {
+            $.ajax({            //获取学生信息
+                async: false,
+                url: "/Student/GetStudent?Id=",
+                data: { Id},
+                        type: "POST",
+                        dataType: "JSON",
+                        success: function (student) {                   //填充学生信息到表单
+                    $("#EditId").val(student.Id);
+                    $("#EditStudentNum").val(student.StudentNum);
+                    $("#EditStudentName").val(student.StudentName);
+                    $("#EditStudentPWD").val(student.StudentPWD);
+                    var schoolId = student.School["Id"];
+                    var classId = student.Class["Id"];
+                            var sex = student.Sex;
+                            if (sex == 0) {
+                                $('#EditSex1').removeAttr("checked");
+                                $('#EditSex0').attr("checked", "checked");
+                            } else if (sex == 1) {
+                                $('#EditSex0').removeAttr("checked");
+                                $('#EditSex1').attr("checked", "checked");
+                            }
+                            $.ajax({               //获取学生学校信息
+                                async: false,
+                                url: "/Student/GetSchool",
+                                type: "POST",
+                                dataType: "JSON",
+                                success: function (school) {
+                                    $("#EditSchool").empty();
+                                    for (var i = 0; i < school.length; i++) {
+                                        if (school[i].Id == schoolId) {
+                                            $("#EditSchool").append("<option value='" + school[i].Id + "' selected='selected'>" + school[i].SchoolName + "</option>")
+                                        } else {
+                                            $("#EditSchool").append("<option value='" + school[i].Id + "'>" + school[i].SchoolName + "</option>")
+                                        }
+                                    }
+                                    $.ajax({            //获取学生班级信息
+                                        async: false,
+                                        url: "/Student/GetClass",
+                                        data: { SchoolId: schoolId },
+                                        type: "POST",
+                                        dataType: "JSON",
+                                        success: function (tempClass) {
+                                            $("#EditClass").empty();
+                                            for (var i = 0; i < tempClass.length; i++) {
+                                                if (tempClass[i].Id == classId) {
+                                                    $("#EditClass").append("<option value='" + tempClass[i].Id + "' selected='selected'>" + tempClass[i].ClassName + "</option>")
+                                                } else {
+                                                    $("#EditClass").append("<option value='" + tempClass[i].Id + "'>" + tempClass[i].ClassName + "</option>")
+                                                }
+                                            }
+                                        }
+                                    })
+                                }
+                            })
+
+                        }
+            })
+        }
+        //学校变更时班级信息变更
+        $("#EditSchool").change(function () {
+            var schoolId = $("#EditSchool").val();
+            $.ajax({
+                async: false,
+                url: "/Student/GetClass?SchoolId = ",
+                data: { schoolId},
+                        type: "POST",
+                        dataType: "JSON",
+                        success: function (tempClass) {
+                            $("#EditClass").empty();
+                            for (var i = 0; i < tempClass.length; i++) {
+                                $("#EditClass").append("<option value='" +tempClass[i].Id + "'>" +tempClass[i].ClassName + "</option>")
+                }
+                }
+                })
+                })
+    </script>
+    <!--向修改模态框添加待编辑学生信息结束-->
+    <!--ajax提交编辑后的学生信息-->
+    <script>
+        $("#EditSubmit").click(function () {
+            $.ajax({
+                url: "/Student/EditSave",
+                data: {
+                    EditId: $("#EditId").val(),
+                    EditStudentNum: $("#EditStudentNum").val(),
+                    EditStudentName: $("#EditStudentName").val(),
+                    EditSex: jQuery('[name="EditSex"]:checked').val(),
+                    EditClass: $("#EditClass").val(),
+                    EditSchool: $("#EditSchool").val(),
+                    EditStudentPWD: $("#EditStudentPWD").val(),
+                },
+                type: "POST",
+                dataType: "json",
+                success: function (result) {
+                    $("#EditClose").click();
+                    alert(result);
+                    $("#StudentList").bootstrapTable('refresh');
+                }
+            })
+        })
+    </script>
+    <!--ajax提交编辑后的学生信息结束-->
+    <!--ajax删除学生信息并更新表格-->
+    <script>
+        $("#DeleteStudents").click(function () {
+
+            var ids = $.map($("#StudentList").bootstrapTable('getSelections'),
+                function (row) {
+                    return row.Id;
+                })
+            if (ids.length <= 0) {
+                alert("请选择至少一条的删除记录");
+            } else {
+                if (confirm("确定删除？")) {
+                    $.ajax({
+                        url: "/Student/Delete",
+                        type: "POST",
+                        data: { Ids: ids },
+                        dataType: "json",
+                        success: function (result) {
+                            alert(result);
+                            $("#StudentList").bootstrapTable('refresh');
+                        }
+                    })
+                }
+            }
+        })
+    </script>
+    <!--ajax删除学生信息并更新表格结束-->
+}

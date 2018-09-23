@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+    <title>中小学生师德评价系统</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/assets/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/style-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <!-- **********************************************************************************************************************************************************
+    MAIN CONTENT
+    *********************************************************************************************************************************************************** -->
+
+    <div id="login-page">
+        <div class="container">
+
+            <div class="form-login">
+                <h2 class="form-login-heading">欢迎登录</h2>
+                <div class="login-wrap">
+                    <select id="SelectRole" class="form-control round-form">选择身份</select>
+                    <br />
+                    <select id="SelectSchool" class="form-control round-form">选择学校</select>
+                    <br />
+                    <input id="LoginName" type="text" class="form-control" placeholder="请输入用户名" autofocus>
+                    <br>
+                    <input id="Password" type="password" class="form-control" placeholder="请输入密码">
+                    <p>
+                        <hr />
+                    </p>
+                    <button id="LoginSubmit" class="btn btn-theme btn-block" type="submit"><i class="fa fa-lock"></i> 登录</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+
+    <!--BACKSTRETCH-->
+    <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
+    <script type="text/javascript" src="/assets/js/jquery.backstretch.min.js"></script>
+    <script>
+        $.backstretch("/assets/img/login-bg.jpg", {speed: 500});
+    </script>
+</body>
+</html>
+<script>
+    var teacher;
+    var student;
+    $(document).ready(function () {
+        $.ajax({
+            url: "/Student/GetSchool",
+            type: "POST",
+            dataType: "JSON",
+            success: function (school) {
+                $("#SelectSchool").empty();
+                for (var i = 0; i < school.length; i++) {
+                    if (i == 0) {
+                        $("#SelectSchool").append("<option value='" + school[i].Id + "' selected='selected'>" + school[i].SchoolName + "</option>")
+                    } else {
+                        $("#SelectSchool").append("<option value='" + school[i].Id + "'>" + school[i].SchoolName + "</option>")
+                    }
+
+                }
+            }
+        })
+        $.ajax({
+            url: "/Home/GetRole",
+            type: "POST",
+            dataType: "JSON",
+            success: function (role) {
+                $("#SelectRole").empty();
+                for (var i = 0; i < role.length; i++) {
+                    if (i == 1) {
+                        $("#SelectRole").append("<option value='" + role[i].RoleId + "' selected='selected'>" + role[i].RoleName + "</option>")
+                    } else {
+                        $("#SelectRole").append("<option value='" + role[i].RoleId + "'>" + role[i].RoleName + "</option>")
+                    }
+
+                }
+            }
+        })
+    })
+
+    $("#SelectRole").change(function () {
+        var roleId = $("#SelectRole").val();
+        if (roleId == 5) {
+            $("#SelectSchool").empty();
+        } else {
+            $.ajax({
+                url: "/Student/GetSchool",
+                type: "POST",
+                dataType: "JSON",
+                success: function (school) {
+                    $("#SelectSchool").empty();
+                    for (var i = 0; i < school.length; i++) {
+                        if (i == 0) {
+                            $("#SelectSchool").append("<option value='" + school[i].Id + "' selected='selected'>" + school[i].SchoolName + "</option>")
+                        } else {
+                            $("#SelectSchool").append("<option value='" + school[i].Id + "'>" + school[i].SchoolName + "</option>")
+                        }
+
+                    }
+                }
+            })
+        }        
+    })
+
+    $("#LoginSubmit").click(function () {
+        var selectRole = $("#SelectRole").val();
+        $.ajax({
+            url: "/Home/Check",
+            data: {
+                RoleId: $("#SelectRole").val(),
+                SchoolId: $("#SelectSchool").val(),
+                LoginName: $("#LoginName").val(),
+                Password: $("#Password").val(),
+            },
+            type: "POST",
+            dataType: "json",
+            success: function (result) {
+                alert(result);
+                if (result.search("成功") >= 0) {
+                    if (selectRole == 2) {
+                        window.location.replace("/Result/Index");
+                    } else if (selectRole == 4) {
+                        window.location.replace("/Write/Index");
+                    } else if (selectRole == 5) {
+                        window.location.replace("/Student/Index");
+                    }
+                }
+            }
+        })
+    })
+</script>

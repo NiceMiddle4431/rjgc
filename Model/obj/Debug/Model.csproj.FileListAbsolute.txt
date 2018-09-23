@@ -1,0 +1,24 @@
+D:\VS2015解决方案\软件工程课设\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\VS2015解决方案\软件工程课设\Model\bin\Debug\Model.dll
+D:\VS2015解决方案\软件工程课设\Model\bin\Debug\Model.pdb
+D:\VS2015解决方案\软件工程课设\Model\obj\Debug\Model.dll
+D:\VS2015解决方案\软件工程课设\Model\obj\Debug\Model.pdb
+D:\VS2015解决方案\rjgc_keshe\Model\bin\Debug\Model.dll
+D:\VS2015解决方案\rjgc_keshe\Model\bin\Debug\Model.pdb
+D:\VS2015解决方案\rjgc_keshe\Model\obj\Debug\Model.dll
+D:\VS2015解决方案\rjgc_keshe\Model\obj\Debug\Model.pdb
+D:\VS2015解决方案\rjgc\Model\bin\Debug\Model.dll
+D:\VS2015解决方案\rjgc\Model\bin\Debug\Model.pdb
+D:\VS2015解决方案\rjgc\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\VS2015解决方案\rjgc\Model\obj\Debug\Model.dll
+D:\VS2015解决方案\rjgc\Model\obj\Debug\Model.pdb
+E:\大三下\软件课程设计\rjgc-master\Model\bin\Debug\Model.dll
+E:\大三下\软件课程设计\rjgc-master\Model\bin\Debug\Model.pdb
+E:\大三下\软件课程设计\rjgc-master\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+E:\大三下\软件课程设计\rjgc-master\Model\obj\Debug\Model.dll
+E:\大三下\软件课程设计\rjgc-master\Model\obj\Debug\Model.pdb
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Model\bin\Debug\Model.dll
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Model\bin\Debug\Model.pdb
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Model\obj\Debug\Model.dll
+C:\Users\Administrator\Documents\Tencent Files\418659047\FileRecv\rjgc-master\Model\obj\Debug\Model.pdb

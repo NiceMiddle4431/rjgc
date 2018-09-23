@@ -1,0 +1,110 @@
+﻿@{
+    
+        ViewBag.Title = "NaireList";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+        int TeacherId = ViewBag.TeacherId;
+        int StudentId = ViewBag.Id;
+
+    }
+
+
+<h3><i class="fa fa-angle-right"></i> <a href="/write/index?studentId=@StudentId">问卷列表</a><i class="fa fa-angle-right"></i> 待填写的问卷</h3>
+<div class="row mt">
+    <div class="col-lg-12">
+        <div class="content-panel">
+            <section id="unseen" style="margin-left:10px;margin-right:10px;">
+
+                <table id="WriteList" class="table table-striped"></table>
+            </section>
+        </div><!-- /content-panel -->
+    </div><!-- /col-lg-4 -->
+</div><!-- /row -->
+@section javascript{
+
+
+    <link href="~/assets/bootstraptable/src/bootstrap-table.css" rel="stylesheet" />
+    <script src="~/assets/bootstraptable/src/bootstrap-table.js"></script>
+    <!--获取老师ID-->
+    <script>
+        var StudentId = @StudentId;
+        var TeacherId = @TeacherId;
+        //调用ajax，
+        $.ajax({
+            type: "POST",
+            url: "/Write/getNaireList",
+            data: {
+                StudentId: StudentId
+            },
+            dataType: 'JSON',
+            success: function(data) {
+
+                //创建
+                $("#WriteList").empty();
+
+                for (var i = 0; i < data.length; i++) {
+                    var QuestionnaireHeadId = data[i].Id;
+                    var QuestionnaireName = data[i].QuestionnaireName;
+                    //是否已经填写？
+                    $.ajax({
+                        async: false,
+                        type: "POST",
+                        url: "/Write/CompletedNaire",
+                        data: {
+                            TeacherId: TeacherId,
+                            StudentId: StudentId,
+                            QuestionnaireHeadId: QuestionnaireHeadId
+                        },
+                        dataType: 'JSON',
+                        success: function(msg) {
+
+                            if (msg == 0) {
+                                //是否过期
+
+                                $.ajax({
+                                    async: false,
+                                    type: "POST",
+                                    url: "/Write/TimeoutNaire",
+                                    data: {
+                                        QuestionnaireHeadId: QuestionnaireHeadId
+                                    },
+                                    dataType: 'JSON',
+                                    success: function(tmsg) {
+                                        var html = "";
+                                        if (tmsg<0) {
+                                            html+="<tr id=\"" + QuestionnaireHeadId+ "\"><td>" + QuestionnaireName + "</td><td><a href=\"\">尚未开始</a></td></tr>";
+                                            $("#WriteList").append(html);
+
+                                        }
+                                        if (tmsg == 0) {
+                                            //是否问题齐全
+                                            $.ajax({
+                                                async: false,
+                                                type: "POST",
+                                                url: "/Write/getQuestionCount",
+                                                data: {
+                                                    QuestionnaireHeadId: QuestionnaireHeadId
+                                                },
+                                                dataType: 'JSON',
+                                                success: function(result) {
+                                                    if (result == 10) {
+
+                                                        //添加该列
+                                                        html += "<tr id=\"" + QuestionnaireHeadId + "\"><td>" + QuestionnaireName + "</td><td><a href=\"/Write/Questionnaire?HeadId=" + QuestionnaireHeadId + "&TeacherId=" + TeacherId + "&StudentId=" + StudentId + "\">开始填写</a></td></tr>";
+                                                        $("#WriteList").append(html);
+
+                                                    }
+                                                }
+                                            });
+                                        }
+                                    }
+                                });
+
+                            }
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+    <!--查看是否已经过期-->
+}

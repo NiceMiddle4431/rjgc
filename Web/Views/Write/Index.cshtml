@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    int studentId = ViewBag.StudentId;
+}
+
+
+
+<h3><i class="fa fa-angle-right"></i> 问卷列表</h3>
+<div class="row mt">
+    <div class="col-lg-12">
+        <div class="content-panel">
+            <section id="unseen" style="margin-left:10px;margin-right:10px;">
+
+                <table id="WriteTeacherList" class="table table-striped"></table>
+            </section>
+        </div><!-- /content-panel -->
+    </div><!-- /col-lg-4 -->
+</div><!-- /row -->
+
+@section javascript{
+
+
+    <link href="~/assets/bootstraptablec/bootstrap-table.css" rel="stylesheet" />
+    <script src="~/assets/bootstraptablec/bootstrap-table.js"></script>
+    <!--获取老师ID-->
+    <script>
+
+
+      
+        //调用ajax，
+        $.ajax({
+            type: "POST",
+            url: "/Write/getTeacherName",
+            data: {
+                StudentId:@studentId,
+            },
+            dataType: 'JSON',
+            success: function(data) {
+
+                //创建
+                $("#WriteTeacherList").empty();
+                for (var i = 0; i < data.length; i++) {
+                    $("#WriteTeacherList").append("<tr id=\""+data[i].Id+"\"><td>" + data[i].TeacherName + "</td><td><a href=\"/Write/NaireList?Id="+@studentId+"&TeacherId="+data[i].Id+"\">进入问卷</a></td></tr>");
+                }
+
+            }
+        });
+
+    </script>
+
+}
